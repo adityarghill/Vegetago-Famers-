@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f7fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .sign-in-page {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .sign-in-form__field {
+      margin-bottom: 15px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #3498db;
+    }
+
+    .sign-in-form__input-container {
+      position: relative;
+    }
+
+    .sign-in-form__input-container i {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3498db;
+      border: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .submit-button:hover:enabled {
+      background-color: #2980b9;
+    }
+
+    .sign-in-page__text {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .sign-in-page__text a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .sign-in-page__text a:hover {
+      text-decoration: underline;
+    }
+
+    .social-sign-in__buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .social-sign-in__buttons button {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: white;
+      cursor: pointer;
+      font-size: 14px;
+      width: 48%;
+      justify-content: center;
+    }
+
+    .social-sign-in__buttons img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    .ge-separator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .ge-separator__line {
+      height: 1px;
+      width: 40%;
+      background-color: #ccc;
+    }
+
+    .ge-separator__content {
+      margin: 0 10px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="sign-in-page narrow-page">
+    <h1>Welcome Back</h1>
+    <form class="sign-in-form" data-testid="sign-in-form">
+      <div class="sign-in-form__email-row">
+        <div class="sign-in-form__field">
+          <div class="sign-in-form__input-container">
+            <input class="form-control" name="email" placeholder="Email" type="email" value="">
+          </div>
+        </div>
+      </div>
+      <div class="sign-in-form__password-row">
+        <div class="sign-in-form__field">
+          <div class="sign-in-form__input-container">
+            <input class="form-control" name="password" placeholder="Password" type="password" value="">
+            <i class="icon icon-eye-open" onclick="togglePasswordVisibility()"></i>
+          </div>
+        </div>
+      </div>
+      <button class="submit-button sign-in-form__submit" disabled>Sign In</button>
+    </form>
+    <div class="sign-in-page__text">
+      <a href="/account/resetpassword">Forgot password?</a>
+    </div>
+    <div class="ge-separator">
+      <span class="ge-separator__line"></span>
+      <span class="ge-separator__content">or</span>
+      <span class="ge-separator__line"></span>
+    </div>
+    <div class="social-sign-in__buttons">
+      <button type="button" class="button google-login-button">
+        <img alt="Google Logo" src="https://goodeggs-assets2.imgix.net/img/jujube/icons/sso-google.52837b7b5ddc7c1643ff.svg?auto=format">
+        <span>Continue with Google</span>
+      </button>
+      <button type="button" class="button apple-login-button">
+        <img alt="Apple Logo" src="https://goodeggs-assets2.imgix.net/img/jujube/icons/sso-apple.fa17ac587a6b8e890121.svg?auto=format">
+        <span>Continue with Apple</span>
+      </button>
+    </div>
+    <p class="sign-in-page__text">Don't have an account? <a data-testid="sign-up-link" href="/signup">Sign Up</a></p>
+  </div>
+
+  <script>
+    function togglePasswordVisibility() {
+      const passwordInput = document.querySelector('input[name="password"]');
+      const eyeIcon = document.querySelector('.icon-eye-open');
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.textContent = ""; // Change icon to "eye closed" when password is visible
+      } else {
+        passwordInput.type = "password";
+        eyeIcon.textContent = ""; // Change icon back to "eye open" when password is hidden
+      }
+    }
+  </script>
+</body>
+</html>
