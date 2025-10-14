@@ -1,0 +1,225 @@
+/* Blog Modal Styles */
+.blog-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blog-modal.active {
+  display: block;
+  opacity: 1;
+}
+
+.blog-modal__content {
+  position: relative;
+  background-color: #fff;
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.blog-modal.active .blog-modal__content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.blog-modal__header {
+  padding: 20px 30px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-modal__title {
+  font-size: 24px;
+  color: #252525;
+  margin: 0;
+  font-weight: 600;
+}
+
+.blog-modal__close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #666;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.blog-modal__close:hover {
+  background-color: #f5f5f5;
+  color: #252525;
+}
+
+.blog-modal__body {
+  padding: 30px;
+}
+
+.blog-modal__image {
+  margin: -30px -30px 30px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.blog-modal__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-modal__meta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.blog-modal__meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.blog-modal__meta i {
+  color: #7fad39;
+}
+
+.blog-modal__text {
+  color: #666;
+  line-height: 1.8;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.blog-modal__tags {
+  margin-bottom: 30px;
+}
+
+.blog-modal__tags h4,
+.blog-modal__share h4 {
+  font-size: 18px;
+  color: #252525;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags-container span {
+  padding: 6px 15px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  color: #666;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tags-container span:hover {
+  background-color: #7fad39;
+  color: #fff;
+}
+
+.social-share {
+  display: flex;
+  gap: 15px;
+}
+
+.social-share a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.social-share .facebook {
+  background-color: #3b5999;
+}
+
+.social-share .twitter {
+  background-color: #55acee;
+}
+
+.social-share .pinterest {
+  background-color: #bd081c;
+}
+
+.social-share .instagram {
+  background-color: #e4405f;
+}
+
+.social-share a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation Classes */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-animate-in {
+  animation: modalFadeIn 0.3s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-modal__content {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .blog-modal__image {
+    height: 250px;
+  }
+
+  .blog-modal__title {
+    font-size: 20px;
+  }
+
+  .blog-modal__meta {
+    gap: 15px;
+  }
+
+  .blog-modal__body {
+    padding: 20px;
+  }
+}
