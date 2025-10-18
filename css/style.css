@@ -1,18 +1,19 @@
 html,
 .root{
 
-	--color-primary : #5e89ff;
-	--color-secondary : #2d2e80;
+	--color-primary : #c7ff5e;
+	--color-secondary : #83be3f;
 	--main-font : 'Poppins', serif;
   	--font-secondary: 'Playfair Display', sans-serif;
 
 }
 body {
-	height: 100%;
-	font-family: var(--main-font);
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+    height: 100%;
+    font-family: var(--main-font);
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;  
 }
+
 
 h1,
 h2,
@@ -1242,20 +1243,22 @@ ol {
 }
 
 .categories__slider.owl-carousel .owl-nav button {
-	font-size: 18px;
-	color: #1c1c1c;
-	height: 70px;
-	width: 30px;
-	line-height: 70px;
-	text-align: center;
-	border: 3px solid var(--color-secondary);
-	border-radius: 20px;
-	position: absolute;
-	left: -35px;
-	top: 50%;
-	-webkit-transform: translateY(-35px);
-	background: #ffffff;
+    font-size: 18px;
+    color: #1c1c1c;
+    height: 70px;
+    width: 30px;
+    line-height: 70px;
+    text-align: center;
+    border: 3px solid var(--color-secondary);
+    border-radius: 20px;
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    -webkit-transform: translateY(-35px); /* for Safari/Chrome */
+    transform: translateY(-35px);         /* standard property */
+    background: #ffffff;
 }
+
 
 .categories__slider.owl-carousel .owl-nav button.owl-next {
 	left: auto;
@@ -3592,12 +3595,14 @@ footer {
 		text-align: center;
 		margin-top: 40px;
 	}
-	.categories__slider.owl-carousel .owl-nav button {
-		position: relative;
-		left: 0;
-		top: 0;
-		-webkit-transform: translateY(0);
-	}
+.categories__slider.owl-carousel .owl-nav button {
+    position: relative;
+    left: 0;
+    top: 0;
+    -webkit-transform: translateY(0); /* for Safari/Chrome */
+    transform: translateY(0);         /* standard property */
+}
+
 	.categories__slider.owl-carousel .owl-nav button.owl-next {
 		right: -10px;
 	}

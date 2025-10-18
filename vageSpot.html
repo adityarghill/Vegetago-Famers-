@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="VegetaGo - Your Local Farmers Market" />
+    <meta
+      name="keywords"
+      content="VegetaGo, farmers market, fresh produce, vegetables, local farm"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>VegetaGo | VageSpot</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css">
+
+    
+    <link rel="stylesheet" href="css/vagespot.css" type="text/css" />
+
+    <link rel="stylesheet" href="css/header-hero.css" type="text/css" />
+    <link rel="stylesheet" href="css/blog-modal.css" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  </head>
+
+  <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="header__logo">
+              <a href="./index.html"><img src="img/logo.png" alt="" /></a>
+              <a href="./index.html" alt="">VEGETAGO</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <nav class="header__menu">
+              <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./shop-grid.html">Shop</a></li>
+                <li class="active"><a href="./vageSpot.html">VageSpot</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-3">
+            <div class="header__cart">
+              <ul>
+                <li>
+                  <a href="#"><i class="fa fa-heart"></i> <span>0</span></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa fa-shopping-bag"></i> <span>0</span></a
+                  >
+                  <div class="header__cart__price">
+                    item: <span>$150.00</span>
+                  </div>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-user"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="humberger__open">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero hero-normal">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 text-center">
+          </div>
+        </div>
+        <div class="row align-items-center mt-4">
+          <div class="col-lg-9 mx-auto">
+            <div class="hero__search">
+              <div class="hero__search__form">
+                <form action="#">
+                  <div class="hero__search__categories">
+                    <span>Categories</span>
+                    <div class="hero__categories">
+                      <div class="hero__categories__all" id="categoriesToggle">
+                        <i class="fa fa-bars"></i>
+                        <span>All departments</span>
+                      </div>
+                      <ul class="category-menu" id="categoriesMenu">
+                        <li><a href="#">Fresh Meat</a></li>
+                        <li><a href="#">Vegetables</a></li>
+                        <li><a href="#">Fruit & Nut Gifts</a></li>
+                        <li><a href="#">Fresh Berries</a></li>
+                        <li><a href="#">Ocean Foods</a></li>
+                        <li><a href="#">Butter & Eggs</a></li>
+                        <li><a href="#">Fastfood</a></li>
+                        <li><a href="#">Fresh Onion</a></li>
+                        <li><a href="#">Papayaya & Crisps</a></li>
+                        <li><a href="#">Oatmeal</a></li>
+                        <li><a href="#">Fresh Bananas</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <input type="text" placeholder="What do you need?" />
+                  <button type="submit" class="site-btn">SEARCH</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-center mt-5">
+          <div class="col-lg-12 text-center">
+            <h1>Latest From Our Blog</h1>
+            <p>
+              Stay updated with farming tips, seasonal produce, and sustainable
+              agriculture practices
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Main Blog Section -->
+    <section class="vagespot spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-5">
+            <div class="vagespot__sidebar">
+              <div class="blog__sidebar__search" data-aos="fade-right">
+                <form action="#">
+                  <div class="search-wrapper">
+                    <input type="text" placeholder="Search articles..." />
+                    <button type="submit">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="blog__sidebar__item">
+                <h4>Categories</h4>
+                <ul>
+                  <li><a href="#">All</a></li>
+                  <li><a href="#">Vegetables (20)</a></li>
+                  <li><a href="#">Fruits (15)</a></li>
+                  <li><a href="#">Organic (9)</a></li>
+                  <li><a href="#">Local Farms (10)</a></li>
+                </ul>
+              </div>
+              <div class="blog__sidebar__item">
+                <h4>Latest Harvest</h4>
+                <div class="blog__sidebar__recent">
+                  <a href="#" class="blog__sidebar__recent__item">
+                    <div class="blog__sidebar__recent__item__pic">
+                      <img src="img/blog/sidebar/sr-1.jpg" alt="" />
+                    </div>
+                    <div class="blog__sidebar__recent__item__text">
+                      <h6>
+                        09 Kinds Of Vegetables<br />
+                        Protect The Liver
+                      </h6>
+                      <span>MAR 05, 2019</span>
+                    </div>
+                  </a>
+                  <a href="#" class="blog__sidebar__recent__item">
+                    <div class="blog__sidebar__recent__item__pic">
+                      <img src="img/blog/sidebar/sr-2.jpg" alt="" />
+                    </div>
+                    <div class="blog__sidebar__recent__item__text">
+                      <h6>
+                        Tips You To Balance<br />
+                        Nutrition Meal Day
+                      </h6>
+                      <span>MAR 05, 2019</span>
+                    </div>
+                  </a>
+                  <a href="#" class="blog__sidebar__recent__item">
+                    <div class="blog__sidebar__recent__item__pic">
+                      <img src="img/blog/sidebar/sr-3.jpg" alt="" />
+                    </div>
+                    <div class="blog__sidebar__recent__item__text">
+                      <h6>
+                        4 Principles Help You Lose <br />Weight With Vegetables
+                      </h6>
+                      <span>MAR 05, 2019</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="blog__sidebar__item">
+                <h4>Popular Products</h4>
+                <div class="vagespot__sidebar__item__tags">
+                  <a href="#">Organic</a>
+                  <a href="#">Local Farm</a>
+                  <a href="#">Fresh Produce</a>
+                  <a href="#">Seasonal</a>
+                  <a href="#">Sustainable</a>
+                  <a href="#">Farm-to-Table</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-7">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="blog__item" data-aos="fade-up">
+                  <div class="blog__item__pic">
+                    <img src="img/blog/blog-2.jpg" alt="" />
+                    <div class="blog__item__date">
+                      <span>May</span>
+                      <h3>4</h3>
+                      <span>2019</span>
+                    </div>
+                  </div>
+                  <div class="blog__item__text">
+                    <div class="blog__item__meta">
+                      <span><i class="fa fa-user"></i> By Admin</span>
+                      <span><i class="fa fa-comment-o"></i> 5 Comments</span>
+                      <span><i class="fa fa-heart-o"></i> 12 Likes</span>
+                    </div>
+                    <h5>
+                      <a href="#" class="blog__item__title">
+                        Fresh Organic Vegetables from Local Farmers
+                      </a>
+                    </h5>
+                    <p>
+                      Discover the finest selection of locally grown organic
+                      vegetables from our trusted network of farmers
+                    </p>
+                    <a
+                      href="javascript:void(0)"
+                      class="blog__btn"
+                      onclick="openBlogModal(this)"
+                      data-title="Fresh Organic Vegetables from Local Farmers"
+                      data-date="May 4, 2019"
+                      data-author="By Admin"
+                      data-comments="5 Comments"
+                      data-likes="12 Likes"
+                      data-image="img/blog/blog-2.jpg"
+                      data-content="Discover the finest selection of locally grown organic vegetables from our trusted network of farmers."
+                      data-tags="organic,local,fresh"
+                    >
+                      READ MORE <span class="arrow_right"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="blog__item" data-aos="fade-up" data-aos-delay="100">
+                  <div class="blog__item__pic">
+                    <img src="img/blog/blog-3.jpg" alt="Seasonal Harvest" />
+                  </div>
+                  <div class="blog__item__text">
+                    <div class="blog__item__meta">
+                      <span><i class="fa fa-calendar"></i> May 4, 2019</span>
+                      <span><i class="fa fa-user"></i> By Farmer John</span>
+                      <span><i class="fa fa-comment"></i> 5 Comments</span>
+                    </div>
+                    <a href="#" class="blog__item__title"
+                      >Seasonal Harvest Updates</a
+                    >
+                    <p>
+                      Stay updated with our latest seasonal produce and special
+                      offers from local farmers
+                    </p>
+                    <a
+                      href="javascript:void(0)"
+                      class="blog__btn"
+                      onclick="openBlogModal(this)"
+                      data-title="Seasonal Harvest Updates"
+                      data-date="May 4, 2019"
+                      data-author="By Farmer John"
+                      data-comments="3 Comments"
+                      data-likes="8 Likes"
+                      data-image="img/blog/blog-3.jpg"
+                      data-content="Stay updated with our latest seasonal produce and special offers from local farmers."
+                      data-tags="seasonal,harvest,updates"
+                    >
+                      READ MORE <span class="arrow_right"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="blog__item">
+                  <div class="blog__item__pic">
+                    <img src="img/blog/blog-1.jpg" alt="" />
+                  </div>
+                  <div class="blog__item__text">
+                    <ul>
+                      <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                      <li><i class="fa fa-comment-o"></i> 5</li>
+                    </ul>
+                    <h5><a href="#">Cooking tips make cooking simple</a></h5>
+                    <p>
+                      Sed quia non numquam modi tempora indunt ut labore et
+                      dolore magnam aliquam quaerat
+                    </p>
+                    <a
+                      href="javascript:void(0)"
+                      class="blog__btn"
+                      onclick="openBlogModal(this)"
+                      data-title="Cooking tips make cooking simple"
+                      data-date="May 4, 2019"
+                      data-author="By Chef Anna"
+                      data-comments="7 Comments"
+                      data-likes="15 Likes"
+                      data-image="img/blog/blog-1.jpg"
+                      data-content="Learn simple cooking tips to make your meals delicious and easy to prepare."
+                      data-tags="cooking,tips,simple"
+                      >READ MORE <span class="arrow_right"></span
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="blog__item">
+                  <div class="blog__item__pic">
+                    <img src="img/blog/blog-4.jpg" alt="" />
+                  </div>
+                  <div class="blog__item__text">
+                    <ul>
+                      <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                      <li><i class="fa fa-comment-o"></i> 5</li>
+                    </ul>
+                    <h5><a href="#">Cooking tips make cooking simple</a></h5>
+                    <p>
+                      Sed quia non numquam modi tempora indunt ut labore et
+                      dolore magnam aliquam quaerat
+                    </p>
+                    <a
+                      href="javascript:void(0)"
+                      class="blog__btn"
+                      onclick="openBlogModal(this)"
+                      data-title="Cooking tips make cooking simple"
+                      data-date="May 4, 2019"
+                      data-author="By Admin"
+                      data-comments="5 Comments"
+                      data-likes="12 Likes"
+                      data-image="img/blog/blog-4.jpg"
+                      data-content="Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat."
+                      data-tags="cooking,tips,simple"
+                      >READ MORE <span class="arrow_right"></span
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="blog__item">
+                  <div class="blog__item__pic">
+                    <img src="img/blog/blog-4.jpg" alt="" />
+                  </div>
+                  <div class="blog__item__text">
+                    <ul>
+                      <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                      <li><i class="fa fa-comment-o"></i> 5</li>
+                    </ul>
+                    <h5>
+                      <a href="#"
+                        >The Moment You Need To Remove Garlic From The Menu</a
+                      >
+                    </h5>
+                    <p>
+                      Sed quia non numquam modi tempora indunt ut labore et
+                      dolore magnam aliquam quaerat
+                    </p>
+                    <a
+                      href="javascript:void(0)"
+                      class="blog__btn"
+                      onclick="openBlogModal(this)"
+                      data-title="The Moment You Need To Remove Garlic From The Menu"
+                      data-date="May 4, 2019"
+                      data-author="By Admin"
+                      data-comments="5 Comments"
+                      data-likes="12 Likes"
+                      data-image="img/blog/blog-4.jpg"
+                      data-content="Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat."
+                      data-tags="garlic,menu,health"
+                      >READ MORE <span class="arrow_right"></span
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="blog__item">
+                  <div class="blog__item__pic">
+                    <img src="img/blog/blog-6.jpg" alt="" />
+                  </div>
+                  <div class="blog__item__text">
+                    <ul>
+                      <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                      <li><i class="fa fa-comment-o"></i> 5</li>
+                    </ul>
+                    <h5><a href="#">Cooking tips make cooking simple</a></h5>
+                    <p>
+                      Sed quia non numquam modi tempora indunt ut labore et
+                      dolore magnam aliquam quaerat
+                    </p>
+                    <a
+                      href="javascript:void(0)"
+                      class="blog__btn"
+                      onclick="openBlogModal(this)"
+                      data-title="Cooking tips make cooking simple"
+                      data-date="May 4, 2019"
+                      data-author="By Admin"
+                      data-comments="5 Comments"
+                      data-likes="12 Likes"
+                      data-image="img/blog/blog-6.jpg"
+                      data-content="Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat."
+                      data-tags="cooking,tips,simple"
+                      >READ MORE <span class="arrow_right"></span
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="product__pagination blog__pagination">
+                  <a href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Blog Section End -->
+
+    <!-- Blog Modal Begin -->
+    <div class="blog-modal" id="blogModal">
+      <div class="blog-modal__content">
+        <div class="blog-modal__header">
+          <h2 class="blog-modal__title"></h2>
+          <button class="blog-modal__close">&times;</button>
+        </div>
+        <div class="blog-modal__body">
+          <div class="blog-modal__image">
+            <img src="" alt="Blog Image" />
+          </div>
+          <div class="blog-modal__meta">
+            <span class="date"><i class="fa fa-calendar"></i></span>
+            <span class="author"><i class="fa fa-user"></i></span>
+            <span class="comments"><i class="fa fa-comment"></i></span>
+            <span class="likes"><i class="fa fa-heart"></i></span>
+          </div>
+          <div class="blog-modal__text"></div>
+          <div class="blog-modal__tags">
+            <h4>Tags:</h4>
+            <div class="tags-container"></div>
+          </div>
+          <div class="blog-modal__share">
+            <h4>Share This Post:</h4>
+            <div class="social-share">
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Blog Modal End -->
+
+    <!-- Footer Section Begin -->
+
+        <!-- Footer Main Content -->
+        <section class="footer-content">
+            <div class="footer-columns">
+
+                <!-- Customer Service -->
+                <div class="footer-column">
+                    <h3>Layanan Pelanggan</h3>
+                    <ul>
+                        <li><a href="#">Bantuan</a></li>
+                        <li><a href="#">Metode Pembayaran</a></li>
+                        <li><a href="#">Lacak Pesanan Pembeli</a></li>
+                        <li><a href="#">Lacak Pengiriman Penjual</a></li>
+                        <li><a href="#">Pengembalian Barang & Dana</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Explore Shopee -->
+                <div class="footer-column">
+                    <h3>Jelajahi VegetaGo</h3>
+                    <ul>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">VegeSpot</a></li>
+                        <li><a href="#">Kebijakan</a></li>
+                        <li><a href="#">Kebijakan Privasi Vegespot</a></li>
+                        <li><a href="#">Seller Centre</a></li>
+                        <li><a href="#">Flash Sale</a></li>
+                        <li><a href="#">Kontak Media</a></li>
+                    </ul>
+                </div>
+
+                <!-- Payment & Shipping -->
+                <div class="footer-column">
+                    <div class="payment-section">
+                        <h3>Pembayaran</h3>
+                        <div class="logo-grid">
+                            <div class="logo-item"><img src="https://down-id.img.susercontent.com/file/id-11134258-7rasg-m3elfigsva7j31" alt="payment"></div>
+                            <div class="logo-item"><img src="https://down-id.img.susercontent.com/file/id-11134258-7rask-m3elfkyp7rvyc9" alt="payment"></div>
+                            <div class="logo-item"><img src="https://down-id.img.susercontent.com/file/id-11134258-7rasi-m3elfnywtdgv0b" alt="payment"></div>
+                            <div class="logo-item"><img src="https://down-id.img.susercontent.com/file/id-11134258-7rasa-m3elfqc3cpsg90" alt="payment"></div>
+                        </div>
+                    </div>
+                    <div class="shipping-section">
+                        <h3>Pengiriman</h3>
+                        <div class="logo-grid">
+                            <div class="logo-item"><img src="https://down-id.img.susercontent.com/file/id-11134258-7rasj-m3elk3axne8sa2" alt="shipping"></div>
+                            <div class="logo-item"><img src="https://down-id.img.susercontent.com/file/id-11134258-7rasf-m3elk52h2gygb5" alt="shipping"></div>
+                            <div class="logo-item"><img src="https://down-id.img.susercontent.com/file/id-11134258-7ra0u-mcugpj7nj6b9b1" alt="shipping"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Follow Us -->
+                <div class="footer-column">
+                    <h3>Ikuti Kami</h3>
+                    <ul>
+                        <li><a href="https://facebook.com/ShopeeID" target="_blank"><img src="https://down-id.img.susercontent.com/file/622550fb2ffb8ddf3913538801bc4c05" class="social-icon" alt="Facebook"> Facebook</a></li>
+                        <li><a href="https://instagram.com/Shopee_ID" target="_blank"><img src="https://down-id.img.susercontent.com/file/ec4d29967019ea44642daa53a40ff89c" class="social-icon" alt="Instagram"> Instagram</a></li>
+                        <li><a href="https://twitter.com/shopeeid" target="_blank"><img src="https://down-id.img.susercontent.com/file/2bf3f4d1e10c63d4df16cf4090ded0a5" class="social-icon" alt="Twitter"> Twitter</a></li>
+                    </ul>
+                </div>
+
+                <!-- App Download -->
+                <div class="footer-column">
+                    <h3>Download Aplikasi Vegetago</h3>
+                    <div class="app-download">
+                        <a href="#"><img src="https://down-id.img.susercontent.com/file/bed0af4663f887db16a7047185478dcf" alt="QR Code" class="qr-code"></a>
+                        <div class="app-buttons">
+                            <a href="#"><img src="https://down-id.img.susercontent.com/file/bbf28a2328ec8c7f57b9cc2069d693fd" alt="App Store"></a>
+                            <a href="#"><img src="https://down-id.img.susercontent.com/file/1858a153798406c87945f15a38bf4874" alt="Google Play"></a>
+                            <a href="#"><img src="https://down-id.img.susercontent.com/file/0e74339f5da500baaaa52785f175bc6d" alt="App Gallery"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer Bottom -->
+        <section class="footer-bottom">
+            <p class="copyright">Vegetago 2025. Hak Cipta Dilindungi</p>
+            <div class="countries">
+                <span class="countries-label">Negara:</span>
+                <a href="#">Singapura</a> | <a href="#">Indonesia</a> | <a href="#">Thailand</a> |
+                <a href="#">Malaysia</a> | <a href="#">Vietnam</a> | <a href="#">Filipina</a>
+            </div>
+        </section>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/blog-modal.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // JavaScript to toggle the dropdown menu
+      document
+        .getElementById("categoriesToggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("categoriesMenu");
+          menu.classList.toggle("show");
+        });
+    </script>
+
+    <style>
+      /* CSS to style the dropdown as a popup */
+      .category-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px); /* Ensure it appears outside the search bar */
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        width: 200px;
+        padding: 10px 0;
+        border-radius: 5px;
+      }
+
+      .category-menu.show {
+        display: block;
+      }
+
+      .category-menu li {
+        list-style: none;
+        padding: 8px 15px;
+      }
+
+      .category-menu li a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+      }
+
+      .category-menu li a:hover {
+        background-color: #f4f4f4;
+      }
+
+      .hero__categories {
+        position: relative;
+      }
+
+      .hero__search {
+        position: relative; /* Ensure dropdown is positioned correctly */
+        z-index: auto;
+      }
+
+      .hero {
+        background: none; /* Removed background image */
+      }
+
+      .hero__item {
+        background: none; /* Removed background image */
+      }
+
+      .banner {
+        background: none; /* Removed background image */
+      }
+    </style>
+  </body>
+</html>
