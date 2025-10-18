@@ -249,3 +249,253 @@ function type() {
 
 type();
 
+//Gede Bjir
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = [
+            { url: '#', image: './img/breadcrumb.jpg', alt: 'Banner Promo 1' },
+            { url: '#', image: './img/bg.VEGETAGO.PNG', alt: 'Banner Official Store' },
+            { url: '#', image: './img/bg.png', alt: 'Banner Promo Special' }
+        ];
+
+        let currentSlide = 0;
+        let autoPlayInterval;
+        let isTransitioning = false;
+
+        const track = document.getElementById('sliderTrack');
+        const pageControl = document.getElementById('pageControl');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Buat slide dan dot
+        slides.forEach((slide, index) => {
+            const slideDiv = document.createElement('div');
+            slideDiv.className = 'slide';
+            slideDiv.innerHTML = `
+                <a href="${slide.url}">
+                    <img src="${slide.image}" alt="${slide.alt}">
+                </a>
+            `;
+            track.appendChild(slideDiv);
+
+            const dot = document.createElement('button');
+            dot.className = 'page-dot';
+            dot.setAttribute('aria-label', 'Slide ' + (index + 1));
+            dot.addEventListener('click', () => goToSlide(index));
+            pageControl.appendChild(dot);
+        });
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateDots();
+            updateActiveSlide();
+        }
+
+        function updateDots() {
+            document.querySelectorAll('.page-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        function updateActiveSlide() {
+            document.querySelectorAll('.slide').forEach((slide, i) => {
+                slide.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+            resetAutoPlay();
+            setTimeout(() => isTransitioning = false, 800);
+        }
+
+        function prevSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+            resetAutoPlay();
+            setTimeout(() => isTransitioning = false, 800);
+        }
+
+        function goToSlide(index) {
+            if (index === currentSlide || isTransitioning) return;
+            isTransitioning = true;
+            currentSlide = index;
+            updateSlider();
+            resetAutoPlay();
+            setTimeout(() => isTransitioning = false, 800);
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        function resetAutoPlay() {
+            stopAutoPlay();
+            startAutoPlay();
+        }
+
+        // Event listener tombol
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // Hover pause
+        const slider = document.querySelector('.slider-wrapper');
+        slider.addEventListener('mouseenter', stopAutoPlay);
+        slider.addEventListener('mouseleave', startAutoPlay);
+
+        // Swipe gesture
+        let touchStartX = 0;
+        slider.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX);
+        slider.addEventListener('touchend', e => {
+            let diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
+        });
+
+        // Keyboard
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // Start everything
+        updateSlider();
+        startAutoPlay();
+    });
+
+
+//inst story
+
+const container = document.getElementById('carouselContainer');
+const navButton = document.getElementById('navButton');
+const scrollButton = document.getElementById('scrollButton');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalVideo = document.getElementById('modalVideo');
+const closeButton = document.getElementById('closeButton');
+const modalClickable = document.getElementById('modalClickable');
+const storyItems = document.querySelectorAll('.story-item');
+
+// Open modal when story is clicked
+storyItems.forEach(item => {
+	item.addEventListener('click', async () => {
+		const videoSrc = item.getAttribute('data-video');
+		modalVideo.src = videoSrc;
+		modalOverlay.classList.add('active');
+		document.body.style.overflow = 'hidden';
+
+		try {
+			modalVideo.muted = false;      // unmute (some browsers default to muted)
+			await modalVideo.play();       // play with audio
+		} catch (err) {
+			console.warn("Autoplay with sound was blocked:", err);
+
+			// fallback: wait for a user click inside the modal
+			modalOverlay.addEventListener('click', () => {
+				modalVideo.play().catch(e => console.error(e));
+			}, { once: true });
+		}
+	});
+});
+
+
+// Close modal
+function closeModal() {
+	modalOverlay.classList.remove('active');
+	modalVideo.pause();
+	modalVideo.src = '';
+	document.body.style.overflow = '';
+}
+
+closeButton.addEventListener('click', closeModal);
+modalClickable.addEventListener('click', closeModal);
+
+// Close with ESC key
+document.addEventListener('keydown', e => {
+	if (e.key === 'Escape') closeModal();
+});
+
+// Check if scrollable
+function checkScrollable() {
+	const isScrollable = container.scrollWidth > container.clientWidth;
+	const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 10;
+
+	if (isScrollable && !isAtEnd) {
+		navButton.classList.add('show');
+	} else {
+		navButton.classList.remove('show');
+	}
+}
+
+// Smooth scroll
+scrollButton.addEventListener('click', () => {
+	container.scrollBy({
+		left: 300,
+		behavior: 'smooth'
+	});
+});
+
+window.addEventListener('load', checkScrollable);
+window.addEventListener('resize', checkScrollable);
+container.addEventListener('scroll', checkScrollable);
+
+// Drag scroll
+let isDown = false;
+let startX;
+let scrollLeft;
+
+container.addEventListener('mousedown', e => {
+	isDown = true;
+	startX = e.pageX - container.offsetLeft;
+	scrollLeft = container.scrollLeft;
+});
+
+container.addEventListener('mouseleave', () => isDown = false);
+container.addEventListener('mouseup', () => isDown = false);
+
+container.addEventListener('mousemove', e => {
+	if (!isDown) return;
+	e.preventDefault();
+	const x = e.pageX - container.offsetLeft;
+	const walk = (x - startX) * 2;
+	container.scrollLeft = scrollLeft - walk;
+});
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function(e) {
+            console.log('Searching for:', e.target.value);
+        });
+
+        // Cart badge update (example)
+        const cartBadge = document.getElementById('cartBadge');
+        let cartCount = 0;
+
+        // Example: Update cart count
+        function updateCart(count) {
+            cartCount = count;
+            cartBadge.textContent = cartCount;
+        }
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Track external link clicks
+document.querySelectorAll('a[target="_blank"]').forEach(link => {
+    link.addEventListener('click', () => {
+        console.log('External link clicked:', link.href);
+    });
+});

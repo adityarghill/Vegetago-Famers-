@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Basic Reset */
     * {
       margin: 0;
       padding: 0;
@@ -14,198 +13,345 @@
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f4f7fc;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       padding: 20px;
     }
 
-    .sign-in-page {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
+    .auth-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 450px;
       width: 100%;
-      padding: 30px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .auth-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     }
 
     h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 28px;
+      margin-bottom: 10px;
       text-align: center;
       color: #333;
+      font-weight: 700;
     }
 
-    .sign-in-form__field {
-      margin-bottom: 15px;
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .form-field {
+      margin-bottom: 20px;
+    }
+
+    .form-field label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .input-wrapper {
+      position: relative;
     }
 
     .form-control {
       width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
       outline: none;
-      transition: border-color 0.3s ease;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
     }
 
     .form-control:focus {
-      border-color: #3498db;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     }
 
-    .sign-in-form__input-container {
-      position: relative;
+    .form-control.error {
+      border-color: #ef4444;
     }
 
-    .sign-in-form__input-container i {
+    .password-toggle {
       position: absolute;
-      right: 10px;
+      right: 16px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 18px;
       cursor: pointer;
+      color: #999;
+      font-size: 18px;
+      user-select: none;
+    }
+
+    .error-message {
+      color: #ef4444;
+      font-size: 12px;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .forgot-password a {
+      color: #667eea;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
     }
 
     .submit-button {
       width: 100%;
-      padding: 12px;
-      background-color: #3498db;
+      padding: 14px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       border: none;
       color: white;
       font-size: 16px;
-      font-weight: bold;
-      border-radius: 8px;
+      font-weight: 600;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .submit-button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-
-    .submit-button:hover:enabled {
-      background-color: #2980b9;
-    }
-
-    .sign-in-page__text {
-      text-align: center;
+      transition: all 0.3s ease;
       margin-top: 10px;
     }
 
-    .sign-in-page__text a {
-      color: #3498db;
-      text-decoration: none;
+    .submit-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
     }
 
-    .sign-in-page__text a:hover {
-      text-decoration: underline;
+    .submit-button:active {
+      transform: translateY(0);
     }
 
-    .social-sign-in__buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-
-    .social-sign-in__buttons button {
+    .divider {
       display: flex;
       align-items: center;
-      padding: 10px 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      justify-content: center;
+      margin: 25px 0;
+    }
+
+    .divider-line {
+      height: 1px;
+      flex: 1;
+      background-color: #e0e0e0;
+    }
+
+    .divider-text {
+      margin: 0 15px;
+      font-size: 13px;
+      color: #999;
+      font-weight: 500;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .social-button {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
       background-color: white;
       cursor: pointer;
       font-size: 14px;
-      width: 48%;
-      justify-content: center;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      gap: 8px;
     }
 
-    .social-sign-in__buttons img {
+    .social-button:hover {
+      border-color: #667eea;
+      background-color: #f8f9ff;
+      transform: translateY(-2px);
+    }
+
+    .social-button img {
       width: 20px;
       height: 20px;
-      margin-right: 8px;
     }
 
-    .ge-separator {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .auth-footer {
+      text-align: center;
       margin-top: 20px;
-    }
-
-    .ge-separator__line {
-      height: 1px;
-      width: 40%;
-      background-color: #ccc;
-    }
-
-    .ge-separator__content {
-      margin: 0 10px;
+      color: #666;
       font-size: 14px;
-      color: #555;
+    }
+
+    .auth-footer a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .auth-footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="sign-in-page narrow-page">
+  <div class="auth-container">
     <h1>Welcome Back</h1>
-    <form class="sign-in-form" data-testid="sign-in-form">
-      <div class="sign-in-form__email-row">
-        <div class="sign-in-form__field">
-          <div class="sign-in-form__input-container">
-            <input class="form-control" name="email" placeholder="Email" type="email" value="">
-          </div>
-        </div>
+    <p class="subtitle">Login to continue to your account</p>
+    
+    <form id="loginForm">
+      <div class="form-field">
+        <label>Email Address</label>
+        <input class="form-control" id="loginEmail" name="email" placeholder="Enter your email" type="email" required>
+        <div class="error-message" id="loginEmailError">Please enter a valid email</div>
       </div>
-      <div class="sign-in-form__password-row">
-        <div class="sign-in-form__field">
-          <div class="sign-in-form__input-container">
-            <input class="form-control" name="password" placeholder="Password" type="password" value="">
-            <i class="icon icon-eye-open" onclick="togglePasswordVisibility()"></i>
-          </div>
+
+      <div class="form-field">
+        <label>Password</label>
+        <div class="input-wrapper">
+          <input class="form-control" id="loginPassword" name="password" placeholder="Enter your password" type="password" required>
+          <span class="password-toggle" onclick="togglePassword()">👁️</span>
         </div>
+        <div class="error-message" id="loginPasswordError">Password is required</div>
       </div>
-      <button class="submit-button sign-in-form__submit" disabled>Sign In</button>
+
+      <div class="forgot-password">
+        <a href="#" onclick="alert('Password reset functionality would go here'); return false;">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="submit-button">Login</button>
     </form>
-    <div class="sign-in-page__text">
-      <a href="/account/resetpassword">Forgot password?</a>
+
+    <div class="divider">
+      <span class="divider-line"></span>
+      <span class="divider-text">OR</span>
+      <span class="divider-line"></span>
     </div>
-    <div class="ge-separator">
-      <span class="ge-separator__line"></span>
-      <span class="ge-separator__content">or</span>
-      <span class="ge-separator__line"></span>
-    </div>
-    <div class="social-sign-in__buttons">
-      <button type="button" class="button google-login-button">
-        <img alt="Google Logo" src="https://goodeggs-assets2.imgix.net/img/jujube/icons/sso-google.52837b7b5ddc7c1643ff.svg?auto=format">
-        <span>Continue with Google</span>
+
+    <div class="social-buttons">
+      <button type="button" class="social-button" onclick="alert('Google login would go here')">
+        <img alt="Google" src="https://goodeggs-assets2.imgix.net/img/jujube/icons/sso-google.52837b7b5ddc7c1643ff.svg?auto=format">
+        <span>Google</span>
       </button>
-      <button type="button" class="button apple-login-button">
-        <img alt="Apple Logo" src="https://goodeggs-assets2.imgix.net/img/jujube/icons/sso-apple.fa17ac587a6b8e890121.svg?auto=format">
-        <span>Continue with Apple</span>
+      <button type="button" class="social-button" onclick="alert('Apple login would go here')">
+        <img alt="Apple" src="https://goodeggs-assets2.imgix.net/img/jujube/icons/sso-apple.fa17ac587a6b8e890121.svg?auto=format">
+        <span>Apple</span>
       </button>
     </div>
-    <p class="sign-in-page__text">Don't have an account? <a data-testid="sign-up-link" href="/signup">Sign Up</a></p>
+
+    <div class="auth-footer">
+      Don't have an account? <a href="/features/register/registerpage.html">Sign Up</a>
+    </div>
   </div>
 
   <script>
-    function togglePasswordVisibility() {
-      const passwordInput = document.querySelector('input[name="password"]');
-      const eyeIcon = document.querySelector('.icon-eye-open');
-
-      if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        eyeIcon.textContent = ""; // Change icon to "eye closed" when password is visible
+    // Toggle password visibility
+    function togglePassword() {
+      const input = document.getElementById('loginPassword');
+      const icon = document.querySelector('.password-toggle');
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.textContent = '🙈';
       } else {
-        passwordInput.type = "password";
-        eyeIcon.textContent = ""; // Change icon back to "eye open" when password is hidden
+        input.type = 'password';
+        icon.textContent = '👁️';
       }
     }
+
+    // Login form validation
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('loginEmail');
+      const password = document.getElementById('loginPassword');
+      const emailError = document.getElementById('loginEmailError');
+      const passwordError = document.getElementById('loginPasswordError');
+      
+      let isValid = true;
+      
+      // Validate email
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value)) {
+        email.classList.add('error');
+        emailError.classList.add('show');
+        isValid = false;
+      } else {
+        email.classList.remove('error');
+        emailError.classList.remove('show');
+      }
+      
+      // Validate password
+      if (password.value.length === 0) {
+        password.classList.add('error');
+        passwordError.classList.add('show');
+        isValid = false;
+      } else {
+        password.classList.remove('error');
+        passwordError.classList.remove('show');
+      }
+      
+      if (isValid) {
+        alert('Login successful!\nEmail: ' + email.value);
+        // Here you would normally send data to your backend
+      }
+    });
+
+    // Clear error on input
+    const inputs = document.querySelectorAll('.form-control');
+    inputs.forEach(input => {
+      input.addEventListener('input', function() {
+        this.classList.remove('error');
+        const errorElement = document.getElementById(this.id + 'Error');
+        if (errorElement) {
+          errorElement.classList.remove('show');
+        }
+      });
+    });
   </script>
 </body>
 </html>
