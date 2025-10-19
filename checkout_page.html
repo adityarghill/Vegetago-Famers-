@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetago Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/checkout_page.css">
+</head>
+<body>
+    <!-- Header -->
+    <!-- Header Top -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="header__logo">
+              <a href="./index.html"><img src="img/logo.png" alt="" /></a>
+              <a href="./index.html" alt="">VEGETAGO</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <nav class="header__menu">
+              <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li class="active"><a href="shop_page.html">Shop</a></li>
+                <li><a href="./vageSpot.html">VegeSpot</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-3">
+            <div class="header__cart">
+              <ul>
+                <li>
+                  <a href="#"><i class="fa fa-heart"></i> <span>0</span></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa fa-shopping-bag"></i> <span>0</span></a
+                  >
+                  <div class="header__cart__price">
+                    item: <span>$150.00</span>
+                  </div>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-user"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="humberger__open">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Cart Section -->
+            <div class="cart-section">
+                <div class="cart-header">
+                    <div class="select-all">
+                        <input type="checkbox" id="select-all">
+                        <label for="select-all">Select all (3 products)</label>
+                    </div>
+                    <div class="delete-btn">
+                        <i class="fas fa-trash"></i>
+                        <span>Delete</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="summary-section">
+                <div class="summary-title">Ringkasan pesanan</div>
+                <div class="summary-row">
+                    <span>Subtotal (0 produk)</span>
+                    <span>Rp0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Ongkir</span>
+                    <span>Rp0</span>
+                </div>
+                
+                <div class="voucher-section">
+                    <div>Voucher</div>
+                    <div class="voucher-input">
+                        <input type="text" placeholder="Masukkan kode voucher">
+                        <button>PAKAI</button>
+                    </div>
+                </div>
+                
+                <div class="total-section">
+                    <div class="total-row">
+                        <span>Total</span>
+                        <span>Rp0</span>
+                    </div>
+                    <small>Termasuk PPN, jika berlaku</small>
+                    <button class="checkout-btn">Lanjutkan ke Checkout (0)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="recommendations">
+            <h2 class="section-title">Recommended For You</h2>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/product/details/thumb-4.jpg" alt="Bayam Organik" />
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Asoy</div>
+                        <div class="product-price">Rp23.000</div>
+                        <div>
+                            <span class="original-price">Rp29.000</span>
+                            <span class="discount">-21%</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(1123)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/product/details/thumb-3.jpg" alt="Bayam Organik" />
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Paket Sayur Tumis</div>
+                        <div class="product-price">Rp24.888</div>
+                        <div>
+                            <span class="original-price">Rp50.000</span>
+                            <span class="discount">-50%</span>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(11953)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                       <img src="img/product/details/thumb-1.jpg" alt="Bayam Organik" />
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Bundle Selada Cihuy</div>
+                        <div class="product-price">Rp21.500</div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(4454)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/product/details/thumb-2.jpg" alt="Bayam Organik" />
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Paket FRESH</div>
+                        <div class="product-price">Rp23.990</div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(4345)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Customer Care</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">How to Buy</a></li>
+                        <li><a href="#">Shipping & Delivery</a></li>
+                        <li><a href="#">International Product Policy</a></li>
+                        <li><a href="#">How to Return</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Vegetago</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Payment Methods</h3>
+                    <ul>
+                        <li><a href="#">Credit/Debit Card</a></li>
+                        <li><a href="#">Cash on Delivery</a></li>
+                        <li><a href="#">Internet Banking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Vegetago. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/checkout_page.js"></script>
+
+</body>
+</html>
+

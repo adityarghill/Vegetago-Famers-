@@ -70,27 +70,31 @@
       cursor: pointer;
     }
 
-    .submit-button {
-      width: 100%;
-      padding: 12px;
-      background-color: #3498db;
-      border: none;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+.submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7fad39;
+    color: white;
+    text-decoration: none; /* remove underline */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
 
-    .submit-button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
+.submit-button:hover {
+    background-color: #6a9430;
+}
 
-    .submit-button:hover:enabled {
-      background-color: #2980b9;
-    }
+.button-container {
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    /* optional: align-items: center; for vertical centering if needed */
+    margin-top: 20px; /* spacing above */
+}
+
+
 
     .sign-in-page__text {
       text-align: center;
@@ -170,7 +174,14 @@
           </div>
         </div>
       </div>
-      <button class="submit-button sign-in-form__submit" disabled>Sign In</button>
+      <div class="button-container">
+        <a href="/profile.html" class="submit-button sign-in-form__submit">
+          Sign In
+        </a>
+      </div>
+
+
+
     </form>
     <div class="sign-in-page__text">
       <a href="/account/resetpassword">Forgot password?</a>

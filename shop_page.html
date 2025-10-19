@@ -13,75 +13,58 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="./css/shopstyle.css">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
 </head>
 <body>
+    
     <!-- Header Top -->
-    <div class="header__top">
-    <div class="header__top__left">
-        <div class="header__top__right__social">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-whatsapp"></i></a>
-        </div>
-
-        <div class="header__top__right__language">
-        <img src="img/indonesia.png" alt="">
-        <div>Bahasa Indonesia</div>
-        <span class="arrow_carrot-down"></span>
-        <ul>
-            <li><a href="#">Indonesia</a></li>
-            <li><a href="#">English</a></li>
-        </ul>
-        </div>
-    </div>
-
-    <div class="header__top__right__auth">
-        <a href="features/login/loginpage.html"><i class="fa fa-user"></i> Sign in</a>
-    </div>
-    </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/VEGETAGO.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop_page.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>99+</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
-                        </ul>
-                    </div>
-                </div>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="header__logo">
+              <a href="./index.html"><img src="img/logo.png" alt="" /></a>
+              <a href="./index.html" alt="">VEGETAGO</a>
             </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
+          </div>
+          <div class="col-lg-6">
+            <nav class="header__menu">
+              <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li class="active"><a href="shop_page.html">Shop</a></li>
+                <li><a href="./vageSpot.html">VegeSpot</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-3">
+            <div class="header__cart">
+              <ul>
+                <li>
+                  <a href="#"><i class="fa fa-heart"></i> <span>0</span></a>
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa fa-shopping-bag"></i> <span>0</span></a
+                  >
+                  <div class="header__cart__price">
+                    item: <span>$150.00</span>
+                  </div>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-user"></i></a>
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
+        <div class="humberger__open">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
     </header>
     <!-- Header Section End -->
     <!-- Top Navigation -->
@@ -93,7 +76,7 @@
             </svg>
             <input type="text" class="search-input" placeholder="Cari beragam kebutuhan harian">
         </div>
-        <button class="cart-btn" onclick="alert('Keranjang belanja')">
+        <button class="cart-btn" onclick="window.location.href='checkout_page.html'">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="9" cy="21" r="1"/>
                 <circle cx="20" cy="21" r="1"/>
@@ -107,36 +90,36 @@
     <div class="categories-carousel">
         <div class="categories-list">
             <div class="category-item">
-                <div class="category-icon">Test</div>
-                <div class="category-name">Sayuran</div>
+                <i class="fas fa-leaf"></i>
+                <div class="category-name">Sayuran Hijau</div>
             </div>
             <div class="category-item">
-                <div class="category-icon">Test</div>
-                <div class="category-name">Buah</div>
+                <i class="fas fa-carrot"></i>
+                <div class="category-name">Umbi-umbian</div>
             </div>
             <div class="category-item">
-                <div class="category-icon">Test</div>
-                <div class="category-name">Segari's Kitchen</div>
+                <i class="fas fa-leaf"></i>
+                <div class="category-name">Sayuran Buah</div>
             </div>
             <div class="category-item">
-                <div class="category-icon">Test</div>
-                <div class="category-name">Kolaborasa</div>
+                <i class="fas fa-carrot"></i>
+                <div class="category-name">Sayuran Bunga</div>
             </div>
             <div class="category-item">
-                <div class="category-icon">Test</div>
-                <div class="category-name">Segari Essentials</div>
+                <i class="fas fa-leaf"></i>
+                <div class="category-name">Sayuran Batang</div>
             </div>
             <div class="category-item active">
-                <div class="category-icon">Test</div>
-                <div class="category-name">Unggas</div>
+                <i class="fas fa-carrot"></i>
+                <div class="category-name">Sayuran Akar</div>
             </div>
             <div class="category-item">
-                <div class="category-icon">Test</div>
-                <div class="category-name">Daging</div>
+                <i class="fas fa-leaf"></i>
+                <div class="category-name">Herbal</div>
             </div>
             <div class="category-item">
-                <div class="category-icon">Test</div>
-                <div class="category-name">Seafood</div>
+                <i class="fas fa-carrot"></i>
+                <div class="category-name">Jamur</div>
             </div>
         </div>
     </div>
@@ -144,19 +127,18 @@
     <!-- Main Content -->
     <div class="main-content">
         <!-- Sidebar -->
+<!-- Sidebar -->
         <div class="sidebar">
-            <div class="subcategory-item active">Semua Unggas</div>
-            <div class="subcategory-item">Kampung Frozen</div>
-            <div class="subcategory-item">Kampung Fresh</div>
-            <div class="subcategory-item">Negeri Frozen</div>
-            <div class="subcategory-item">Negeri Fresh</div>
-            <div class="subcategory-item">Paket Masak Ayam</div>
-            <div class="subcategory-item">Potongan Lainnya</div>
+            <div class="subcategory-item active" data-filter="all">Semua Produk</div>
+            <div class="subcategory-item" data-filter="promo">Promo</div>
+            <div class="subcategory-item" data-filter="new">Produk Terbaru</div>
+            <div class="subcategory-item" data-filter="other">Produk Lainnya</div>
         </div>
+
 
         <!-- Products Area -->
         <div class="products-area">
-            <h2 class="subcategory-title">Semua Unggas</h2>
+            <h2 class="subcategory-title">Semua Produk</h2>
             <div class="products-grid" id="productsGrid"></div>
         </div>
     </div>
@@ -168,115 +150,55 @@
         </svg>
     </button>
 
-    <script>
-        const products = [
-            { id: 1, name: 'Paha Ayam Boneless', labels: ['Frozen', 'Boneless'], weight: '450 - 500 gram / pack', price: 19900, originalPrice: 36900, emoji: 'Test', promo: 'Harga Gila' },
-            { id: 2, name: 'Sayap Ayam Wing Stick', labels: ['Frozen'], weight: '450 - 500 gram / pack', price: 22400, originalPrice: 28000, emoji: 'Test', promo: 'Promo' },
-            { id: 3, name: 'Ati Ayam', labels: ['Frozen', 'Boneless'], weight: '450 - 500 gram / pack', price: 19000, originalPrice: 21900, emoji: 'Test', promo: 'Promo' },
-            { id: 4, name: 'Ati Ampela Ungkep Bumbu Kuning', labels: ['Frozen', 'Siap Masak'], weight: '300 gram / pack', price: 38200, originalPrice: 39100, emoji: 'Test', promo: 'Promo' },
-            { id: 5, name: 'Ayam Goreng Mentega 5 Minutes', labels: ['Frozen', 'Siap Hangatkan'], weight: '100 gram / pack', price: 24500, originalPrice: 24900, emoji: 'Test', promo: 'Promo' },
-            { id: 6, name: 'Ayam Suwir Bumbu Bali 5 Minutes', labels: ['Frozen', 'Siap Hangatkan'], weight: '100 gram / pack', price: 23200, originalPrice: 23600, emoji: 'Test', promo: 'Promo' },
-            { id: 7, name: 'Chicken Strip Segari', labels: ['Frozen', 'Siap Masak'], weight: '300 gram / pack', price: 55300, originalPrice: 56100, emoji: 'Test', promo: 'Promo' },
-            { id: 8, name: 'Ayam Kecombrang Oelek x Segari', labels: [], weight: '100 gram / pack', price: 31000, originalPrice: 32400, emoji: 'Test', promo: 'Promo' },
-            { id: 9, name: 'Bundling Double Ayam A', labels: [], weight: '2 pcs / pack', price: 71100, originalPrice: 71800, emoji: 'Test', promo: 'Bundling' },
-            { id: 10, name: 'Ceker Emplok Oelek x Segari', labels: [], weight: '200 gram / pack', price: 41000, originalPrice: 51800, emoji: 'Test', promo: 'Promo' },
-            { id: 11, name: 'Ceker Mercon Daun Jeruk', labels: [], weight: '200 gram / pack', price: 41000, originalPrice: 51500, emoji: 'Test', promo: 'Promo', isNew: true },
-            { id: 12, name: 'Nugget Ayam Segari', labels: ['Frozen', 'Siap Masak'], weight: '260 - 280 gram / pack', price: 25500, originalPrice: 25800, emoji: 'Test', promo: 'Promo' },
-            { id: 13, name: 'Paket Ayam Ungkep Sedap', labels: [], weight: '3 pcs / pack', price: 103600, originalPrice: 105100, emoji: 'Test', promo: 'Bundling' },
-            { id: 14, name: 'Dada Ayam Boneless', labels: ['Frozen', 'Boneless'], weight: '450 - 500 gram / pack', price: 35900, originalPrice: 39900, emoji: 'Test', promo: 'Promo' },
-            { id: 15, name: 'Ayam Kampung Potong 8', labels: ['Fresh'], weight: '900 - 1000 gram / pack', price: 55000, originalPrice: 60000, emoji: 'Test', promo: 'Promo' },
-        ];
-
-        let cart = {};
-
-        function formatPrice(price) {
-            return 'Rp' + price.toLocaleString('id-ID');
-        }
-
-        function renderProducts() {
-            const grid = document.getElementById('productsGrid');
-            grid.innerHTML = products.map(product => `
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-emoji">${product.emoji}</div>
-                        <div class="promo-label">${product.promo}</div>
-                        ${product.isNew ? '<div class="new-badge">Baru</div>' : ''}
-                    </div>
-                    <div class="product-info">
-                        <div class="product-name">${product.name}</div>
-                        ${product.labels.length > 0 ? `
-                            <div class="product-labels">
-                                ${product.labels.map(label => `<span class="product-label">${label}</span>`).join('')}
-                            </div>
-                        ` : ''}
-                        <div class="product-weight">${product.weight}</div>
-                        <div class="product-price-section">
-                            <div class="price-info">
-                                <div class="current-price">${formatPrice(product.price)}</div>
-                                <div class="original-price">${formatPrice(product.originalPrice)}</div>
-                            </div>
-                            <div id="cart-${product.id}">
-                                ${cart[product.id] ? `
-                                    <div class="quantity-control">
-                                        <button class="qty-btn" onclick="updateCart(${product.id}, -1)">−</button>
-                                        <span class="qty-display">${cart[product.id]}</span>
-                                        <button class="qty-btn" onclick="updateCart(${product.id}, 1)">+</button>
-                                    </div>
-                                ` : `
-                                    <button class="add-btn" onclick="updateCart(${product.id}, 1)">+</button>
-                                `}
-                            </div>
-                        </div>
-                    </div>
+        <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Customer Care</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">How to Buy</a></li>
+                        <li><a href="#">Shipping & Delivery</a></li>
+                        <li><a href="#">International Product Policy</a></li>
+                        <li><a href="#">How to Return</a></li>
+                    </ul>
                 </div>
-            `).join('');
-        }
+                <div class="footer-column">
+                    <h3>Vegetago</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Payment Methods</h3>
+                    <ul>
+                        <li><a href="#">Credit/Debit Card</a></li>
+                        <li><a href="#">Cash on Delivery</a></li>
+                        <li><a href="#">Internet Banking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Vegetago. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    
+<script src="js/shop_page.js"></script>
 
-        function updateCart(productId, change) {
-            if (!cart[productId]) {
-                cart[productId] = 0;
-            }
-            cart[productId] += change;
-            
-            if (cart[productId] <= 0) {
-                delete cart[productId];
-            }
-
-            updateCartBadge();
-            renderProducts();
-        }
-
-        function updateCartBadge() {
-            const total = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
-            const badge = document.getElementById('cartBadge');
-            badge.textContent = total;
-            badge.className = total > 0 ? 'cart-badge active' : 'cart-badge';
-        }
-
-        // Subcategory navigation
-        document.querySelectorAll('.subcategory-item').forEach(item => {
-            item.addEventListener('click', function() {
-                document.querySelectorAll('.subcategory-item').forEach(i => i.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
-        // Jump to top button
-        const jumpBtn = document.getElementById('jumpToTop');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                jumpBtn.classList.add('visible');
-            } else {
-                jumpBtn.classList.remove('visible');
-            }
-        });
-
-        jumpBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Initialize
-        renderProducts();
-    </script>
 </body>
 </html>

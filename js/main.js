@@ -253,9 +253,9 @@ type();
 
     document.addEventListener('DOMContentLoaded', () => {
         const slides = [
-            { url: '#', image: './img/breadcrumb.jpg', alt: 'Banner Promo 1' },
-            { url: '#', image: './img/bg.VEGETAGO.PNG', alt: 'Banner Official Store' },
-            { url: '#', image: './img/bg.png', alt: 'Banner Promo Special' }
+            { url: '#', image: './img/models/1.png', alt: 'Banner Promo 1' },
+            { url: '#', image: './img/models/2.png', alt: 'Banner Official Store' },
+            { url: '#', image: './img/models/3.png', alt: 'Banner Promo Special' }
         ];
 
         let currentSlide = 0;
